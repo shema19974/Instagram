@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<% if logged_in? %>
+<% check = 0, links='1', id=nil, nam=nil %>
+<% @profiles.each do |profile| %>
+  <% if current_user.id == profile.user_id %>
+    <% check = 1%>
+    <%links = profile.image.url %>
+    <%id =profile%>
+  <%nam= profile.user.name%>
+  <% end %>
+<% end %>
+<% if check==1 %>
+<p><%= image_tag links, class:"rounded-circle" unless links.blank? %></p>
+<p><%= nam%></p>
+<%= link_to 'Edit', edit_profile_path(id) %>
+<%= link_to 'Destroy', id, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<% else %>
+<p><i class="fal fa-user"></i></p>
+<%= nam%>
+<%= link_to 'upload a profile picture', new_profile_path %>
+<% end %>
+<% end %>
+
+<h1>Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Blog</th>
+      <th>Image</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <%= %>
+        <td><%= post.blog %></td>
+        <td><%= image_tag post.image.url %></td>
+        <td><%= post.user.name %></td>
+        <% if logged_in?%>
+          <% if post.user_id == current_user.id%>
+            <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%end%>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
