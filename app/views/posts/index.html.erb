@@ -47,7 +47,15 @@
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
             <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <%end%>
-        <%end%>
+  <% unless post.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'Cancel favorite', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'Make it a favorite', favorites_path(post_id: post.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+<%end%>
+        
       </tr>
     <% end %>
   </tbody>

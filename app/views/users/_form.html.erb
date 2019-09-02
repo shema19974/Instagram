@@ -1,3 +1,6 @@
+<div class="container">
+  <div class="card login-fm" >
+  <h1 class="instagram-title">New User</h1>
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +14,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group login-btn">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class:"form-control", placeholder:"Enter your email" %>
   </div>
 
-  <div class="field">
+  <div class="form-group login-btn">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control", placeholder:"Enter name" %>
   </div>
 
-  <div class="field">
+  <div class="form-group login-btn">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class:"form-control", placeholder:"Enter password" %>
   </div>
 
-  <div class="field">
+  <div class="form-group login-btn">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+    <%= form.password_field :password_confirmation, class:"form-control", placeholder:"Re-enter your password" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="login-btn">
+    <%= form.submit class:"btn btn-primary btn-form"%>
   </div>
+  
 <% end %>
+<div class="card second-card">
+      <span id="sign-up">Have an account? <%= link_to "Login", new_session_path %></span>
+</div>
+</div>
+</div>

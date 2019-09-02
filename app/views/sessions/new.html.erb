@@ -1,11 +1,19 @@
-<h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit "Log in" %>
-<% end %>
+<div class="container new-user-form">
+  <div class="card login-fm" >
+    <h1 class="instagram-title">Instagram</h1>
+    <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+      <div class="form-group login-btn">
+      <%= f.label :email %>
+      <%= f.email_field :email, class:"form-control",placeholder:'Enter email' %>
+      </div>
+      <div class="form-group login-btn">
+      <%= f.label :password %>
+      <%= f.password_field :password, class:"form-control", placeholder:"Enter password" %>
+      <%= f.submit "Log in", class:"btn btn-primary btn-form" %>
+    <% end %>
+  <div>
+</div>
+<div class="card second-card">
+      <span id="sign-up">Don't have account? <%= link_to "Sign up", new_user_path %></span>
+</div>
+</div>
