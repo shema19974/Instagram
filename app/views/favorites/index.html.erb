@@ -1,4 +1,12 @@
-<% @favorite.each do |fav| %>
-  <%= fav.post.user.name%>
-  <%= fav.post%>
-<% end %>
+<div class="container fav-page">
+  <h3>My favorite posts</h3>
+  <% @favorite.each do |fav| %>
+    <%if current_user.id == fav.user.id%> <div>
+    <div class="card my-card">
+    <div>Posted By: <%= fav.post.user.name%></div>
+    <div><%= fav.post.blog%></div>
+    <div><%= image_tag fav.post.image.url,alt:"No pic", size: "150x150" unless fav.post.image.url.blank? %></div>
+    </div>
+    <%end%>
+  <% end %>
+</div>

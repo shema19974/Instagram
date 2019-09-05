@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="container show-page">
+  <div class="card">
+    <p id="notice"><%= notice %></p>
+    <div class="card-body row">  
+    <% if @user.profile.present? %> 
+      <%= image_tag @user.profile.image.url,class:"rounded-circle", style:"margin-left: 50px; margin-right: 150px;", size:"150x150" unless @user.profile.image.url.blank? %>
+      <% end %>
+      <div class="user-name">     
+      <%= @user.name %>
+      </div>
+      <%= link_to 'Edit Profile', edit_user_path(@user), class:"btn btn-default btn-warning profile-edit-btn" %>
+     <!-- Example single danger button -->
+  <div>
+    <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= image_tag 'Settings.png', class:"btn-setting"%>
+    </button>
+    <div class="dropdown-menu">
+    <div><%= link_to "Profile", user_path(current_user.id) %></div>
+    <div><%= link_to "Logout", session_path(current_user.id), method: :delete %></div>
+  </div>
+</div>
+  </div>
+  </div> 
+  </div>
+</div>

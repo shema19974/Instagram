@@ -1,0 +1,14 @@
+<%if logged_in? %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navigation_bar">
+  <%= link_to image_tag('InstaIcon.png'),posts_path,class:"instagramIcon"%>
+  <a class="navbar-brand" href="#">Instagram</a>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  <div class="nav-btn">
+    <%= link_to image_tag('like.png'),favorites_path%> 
+    <%= link_to image_tag('profile.png'),user_path(current_user.id), class:"profileIco" %>
+  </div>
+  </nav>
+<% end %>

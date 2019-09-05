@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @profile.image.url %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user.name %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<div class="container show-profile">
+  <div class="card">
+    <div class="card-body">
+      <%= image_tag @profile.image.url, size:"50x50" %>
+      <%= @profile.user.name %>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Edit', edit_profile_path(@profile) %> |
+      <%= link_to 'Back', profiles_path %>
+      </div>    
+  </div>
+</div>

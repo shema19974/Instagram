@@ -3,7 +3,7 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .login-fm{
-    position: absolute;
+    margin-top:70px;
     left: 32%;
     width: 25rem;
     height: 35rem;
@@ -27,4 +27,85 @@
 .new-user-form{
     margin-top: 20px;
 }
+.my-index{
+    position: absolute;
+    float: right;
+    left: 350px;
+    width: 300px;
+}
+.my-card{
+    width: 35rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.profile-edit-btn{
+    width: 150px;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
+.btn-setting{
+    width:30px;
+    height: 30px;
+    margin-left: 30px;
+}
+.user-name{
+    margin-left: 40px;
+}
+/* .navigation_bar{
+    position: fixed;
+} */
+.instagramIcon{
+    margin-left: 200px;
+    margin-right: 100px;
+}
+.profileIco{
+    margin-left: 20px;
+}
+.show-page{
+    margin-top: 100px;
+}
+.nav-btn{
+    margin-left: 200px;
+}
+.show-card{
+    margin-top: 100px;
+    width: 40rem;
+    
+}
+.profile-pic{
+    margin-top: 100px;
+}
+.post-content{
+    width: 20rem;
+}
+.fav-page{
+    margin-top: 70px;
+}
+.new-prof-form{
+    margin-top:80px;
+}
+.show-profile{
+    margin-top: 70px;
+}
+.profile-all{
+    margin-top: 70px;
+}
+.all-profile{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 32rem; 
+}
+.user-card{
+    margin-left: 30px;
+    margin-top: 200px;
+    padding-left: 50px;
+    width: 12rem;
+}
+.br{
+    padding-top:4rem;
+}
+.my-container{
+    margin-top:100px;
+}

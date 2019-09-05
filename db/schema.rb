@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_103543) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.text "image"
+    t.text "image", default: ""
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
