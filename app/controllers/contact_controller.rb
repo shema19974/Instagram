@@ -18,10 +18,10 @@ class ContactsController < ApplicationController
     private
   
     def set_contact
-      @contact = Contact.find(params[:id])
+    @contact = Contact.find(params[:id])
     end
   
     def contact_params
-      params.require(:contact).permit(:name, :email, :content)
+    params.require(:contact).permit(:name, :email, :content)
     end
   end

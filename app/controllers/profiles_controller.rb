@@ -64,11 +64,11 @@ class ProfilesController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_profile
-    @profile = Profile.find(params[:id])
+  @profile = Profile.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def profile_params
-    params.require(:profile).permit(:image, :user_id, :image_cache)
+  params.require(:profile).permit(:image, :user_id, :image_cache)
   end
 end
