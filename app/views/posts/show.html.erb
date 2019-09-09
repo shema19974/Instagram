@@ -4,7 +4,12 @@
       <div class="card-body">
         <div><%= @post.blog %></div>
         <br>
-        <div><%= image_tag @post.image.url, size:"150x150" %></div>
+        <div>
+        <%if @post.image.present? %>
+          <%= image_tag @post.image.url, size:"150x150" %>
+        <%else%>
+        <%end%>
+        </div>
         Posted By: <%= @post.user.name %>
       </div>    
     <div class="card-footer">
